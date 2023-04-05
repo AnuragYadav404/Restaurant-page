@@ -5,6 +5,11 @@ import contactPage from './contactPage';
 
 const content = document.getElementById('content');
 
+
+//  homeStatus      -> true
+//  menuStatus      -> false
+//  contactStatus   -> false
+
 var homeStatus = true;
 var menuStatus = false;
 var contactStatus = false;
@@ -23,20 +28,33 @@ const contactButton = pageObj.contactButton;
 homeButton.addEventListener('click', function() {
     // let child = pageObj.mainBody.firstChild;
     // pageObj.mainBody.remove(child);
-    console.log("Event started")
-    pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
-    console.log("child removed")
-    // debugger
-    homePage(pageObj.mainBody);
-    console.log("Child added")
+    if(!homeStatus) {
+        homeStatus = true;
+        menuStatus = false;
+        contactStatus = false;
+        pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
+        // debugger
+        homePage(pageObj.mainBody);
+    }
+    
 })
 
 menuButton.addEventListener('click', function() {
-    pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
-    menuPage(pageObj.mainBody);
+    if(!menuStatus){
+        homeStatus = false;
+        menuStatus = true;
+        contactStatus = false;
+        pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
+        menuPage(pageObj.mainBody);
+    }
 })
 
 contactButton.addEventListener('click', function() {
-    pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
-    contactPage(pageObj.mainBody);
+    if(!contactStatus){
+        homeStatus = false;
+        menuStatus = false;
+        contactStatus = true;
+        pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
+        contactPage(pageObj.mainBody);
+    }
 })
