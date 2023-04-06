@@ -2,13 +2,10 @@ import pageLoadFunction from './initialPageLoad';
 import homePage from './homePage';
 import menuPage from './menuPage';
 import contactPage from './contactPage';
+import './styles.css';
 
 const content = document.getElementById('content');
-
-
-//  homeStatus      -> true
-//  menuStatus      -> false
-//  contactStatus   -> false
+const body  = document.getElementById('body');
 
 var homeStatus = true;
 var menuStatus = false;

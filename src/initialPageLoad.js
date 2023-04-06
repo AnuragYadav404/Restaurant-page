@@ -1,3 +1,5 @@
+import './styles.css';
+
 export default function pageLoad() {
     // const subContent = document.createElement('div');
     // const subContentImage = document.createElement('img');
@@ -15,6 +17,7 @@ export default function pageLoad() {
     const container = document.createElement('div');
 
     const header = document.createElement('div');
+    header.classList.add('header');
     const mainBody = document.createElement('div');
     const footer = document.createElement('div');
 

@@ -1,5 +1,8 @@
+import './styles.css'
+
 export default function contactPage(ele) {
     const subContent = document.createElement('div');
+    subContent.classList.add('subcontent');
 
     const contact1 = document.createElement('h1');
     const p1 = document.createElement('p1');

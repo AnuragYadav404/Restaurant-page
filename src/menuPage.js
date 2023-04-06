@@ -1,5 +1,11 @@
+import './styles.css';
+
 export default function menuPage(ele) {
     const subContent = document.createElement('div');
+    subContent.classList.add('subcontent');
+    const menuHead = document.createElement('h1');
+    menuHead.innerText = "MENU";
+
     const menuList = document.createElement('ul');
 
     const item1 = document.createElement('li');
@@ -12,6 +18,6 @@ export default function menuPage(ele) {
     item3.innerText = "KalaSuar Wings";
 
     menuList.append(item1, item2, item3);
-    subContent.append(menuList);
+    subContent.append(menuHead, menuList);
     ele.appendChild(subContent);
 }   
