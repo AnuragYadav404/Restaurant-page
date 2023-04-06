@@ -4,16 +4,27 @@ export default function contactPage(ele) {
     const subContent = document.createElement('div');
     subContent.classList.add('subcontent');
 
-    const contact1 = document.createElement('h1');
-    const p1 = document.createElement('p1');
-    contact1.innerText = "Contact Number 1 :"
-    p1.innerText = "1231231234";
+    const pedro = document.createElement('ul');
+    const pedroName = document.createElement('li')
+    pedroName.innerText = 'Pedro Salamanca';
+    const pedroDesign = document.createElement('li');
+    pedroDesign.innerText = 'Designation : Head Chef';
+    const pedroNumber = document.createElement('li');
+    pedroNumber.innerText = 'Contact Number : 1231231231';
+    pedro.append(pedroName, pedroDesign, pedroNumber);
 
-    const contact2 = document.createElement('h1');
-    const p2 = document.createElement('p2');
-    contact2.innerText = "Contact Number 2 :"
-    p2.innerText = "3331231234";
 
-    subContent.append(contact1,p1,contact2,p2);
+    const tuco = document.createElement('ul');
+    const tucoName = document.createElement('li')
+    tucoName.innerText = 'Tuco Salamanca';
+    const tucoDesign = document.createElement('li');
+    tucoDesign.innerText = 'Designation : Manager';
+    const tucoNumber = document.createElement('li');
+    tucoNumber.innerText = 'Contact Number : 7891234565';
+    tuco.append(tucoName, tucoDesign, tucoNumber);
+
+
+    subContent.append(pedro, tuco);
+
     ele.appendChild(subContent);
 }
