@@ -24,6 +24,7 @@ export default function pageLoad() {
     const homeButton = document.createElement('button');
     homeButton.id = "home";
     homeButton.innerText = "HOME";
+    homeButton.classList.add('active');
     const menuButton = document.createElement('button');
     menuButton.innerText = "MENU";
     menuButton.id = "menu";

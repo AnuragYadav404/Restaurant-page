@@ -21,37 +21,41 @@ homePage(pageObj.mainBody);
 const homeButton = pageObj.homeButton;
 const menuButton = pageObj.menuButton;
 const contactButton = pageObj.contactButton;
+var currentButton = homeButton;
 
 homeButton.addEventListener('click', function() {
     // let child = pageObj.mainBody.firstChild;
     // pageObj.mainBody.remove(child);
-    if(!homeStatus) {
-        homeStatus = true;
-        menuStatus = false;
-        contactStatus = false;
+    if(currentButton !== homeButton) {
+        currentButton.classList.remove('active');
+        currentButton = homeButton;
+        currentButton.classList.add('active');
         pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
         // debugger
         homePage(pageObj.mainBody);
+        
     }
     
 })
 
 menuButton.addEventListener('click', function() {
-    if(!menuStatus){
-        homeStatus = false;
-        menuStatus = true;
-        contactStatus = false;
+    if(currentButton !== menuButton){
+        currentButton.classList.remove('active');
+        currentButton = menuButton;
+        currentButton.classList.add('active');
         pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
         menuPage(pageObj.mainBody);
+        
     }
 })
 
 contactButton.addEventListener('click', function() {
-    if(!contactStatus){
-        homeStatus = false;
-        menuStatus = false;
-        contactStatus = true;
+    if(currentButton !== contactButton){
+        currentButton.classList.remove('active');
+        currentButton = contactButton;
+        currentButton.classList.add('active');
         pageObj.mainBody.removeChild(pageObj.mainBody.firstElementChild);
         contactPage(pageObj.mainBody);
+       
     }
 })
